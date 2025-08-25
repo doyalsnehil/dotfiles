@@ -19,7 +19,8 @@ source "$ZSH/oh-my-zsh.sh"
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
-export PATH="$PATH:/home/snehil/.local/bin" # Corrected pipx path
+export PATH="$PATH:/home/snehil/.local/bin" # Corrected pipx patha eg. for also can be used for useronly apps like ghostty 
+export PATH="$PATH:/home/snehil/.npm-global/bin" # path for global packages of npm ( can be configured differently  )
 
 # Editor configuration
 export EDITOR='nvim'
