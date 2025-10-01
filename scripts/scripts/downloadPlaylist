@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+echo 'Activating env'
+source ~/repos/bin/py/env/bin/activate
+
+echo 'Paste Url of your playlist(private playlist doesnt work)'
+read playlistUrl
+
+echo 'Default Path is ~/Music/ do you want to change it?(y/n)'
+read choice
+
+if [[ "${choice}" != 'y' ]]; then
+    echo 'Downloading .......'
+    yt-dlp --extract-audio --audio-format mp3 --embed-thumbnail -o '~/music/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' "${playlistUrl}"
+else
+    echo 'enter absolute path eg(~/foo/bar)'
+    read path
+    yt-dlp --extract-audio --audio-format mp3 --embed-thumbnail -o "${path}/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "${playlistUrl}"
+fi
+
+if [[ "$?" -ne 0 ]]; then
+    echo "Something went wrong.. try again"
+else
+    echo "Downloaded at ${path}"
+fi
+deactivate

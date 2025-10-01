@@ -2,7 +2,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set theme and plugins
-ZSH_THEME="xiong-chiamiov-plus"
+ZSH_THEME="customs"
+#ZSH_THEME="xiong-chiamiov-plus"
 plugins=(
   git
   zsh-autosuggestions
@@ -25,6 +26,9 @@ export PATH="$PATH:/home/snehil/.npm-global/bin" # path for global packages of n
 # Editor configuration
 export EDITOR='nvim'
 alias vim='nvim'
+alias con='warp-cli connect'
+alias dcon='warp-cli disconnect'
+alias conup='nmcli con up redmi'
 
 # NVM (Node Version Manager) configuration
 export NVM_DIR="$HOME/.nvm"
@@ -38,3 +42,10 @@ eval "$(tmuxifier init -)"
 # Key bindings
 bindkey -s '^F' 'tmux-sessionizer\n'
 bindkey -s '^A' 'tmux attach\n'
+
+# bun completions
+[ -s "/home/snehil/.bun/_bun" ] && source "/home/snehil/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
