@@ -1,52 +1,99 @@
+/* base style for workspace buttons */
 @import "colors.css";
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    min-height: 0;
+	border: none;
+	font-family: "JetBrainsMono Nerd Font", Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+	min-height: 0;
+	margin:0;
+	padding: 0;
 }
 
 window#waybar {
-    background: transparent;
-    color: @on_surface;
+	background: transparent;
+	color: @on_surface;
 }
 
+.modules-left,
+.modules-right {
+	margin: 0px 10px;
+	margin-top: 10px;
+}
+.modules-center {
+	margin-top: 10px;
+}
 tooltip {
-  background: @background;
-  border: 1px solid rgba(100, 114, 125, 0.5);
+	background: @background;
+	border: 1px solid rgba(100, 114, 125, 0.5);
 }
+
 tooltip label {
-  color: @on_surface;
+	color: @on_surface;
+	padding:0 15px;
 }
 
+#workspaces {
+	margin: 0 10px;
+	background-color: transparent;
+	transition: all 200ms ease-in-out;
+}
 #workspaces button {
-    padding: 5px;
-	margin: 7px;
-    background: @primary;
-    color: #121212;
-    border-bottom: 3px solid transparent;
+	background: @secondary;
+	padding: 0px 7px;
+	margin: 2px;
+	border-radius: 5px;
+	transition: all 200ms ease-in-out;
+	
+}
+#workspaces button:hover {	
+	color:@background;
 }
 
-#workspaces button.active{
-	background:cyan
+/* .config/waybar/style.css*/
+/* #workspaces button.active {
+	color: @peach;
+	border-radius: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
+	animation: gradient_f 20s ease-in infinite;
+	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+} */
+
+#workspaces button.active {
+	background: @inverse_primary;
+	color:@on_surface;
+	border-radius: 100px;
+	padding: 0px 15px;
+	transition: all 250ms ease-in-out;
+	font-weight: 700;
 }
 
-
-
-#workspaces button.focused {
-    background: #64727d;
-    border-bottom: 3px solid white;
+#workspaces button.active:hover {
+	background: @inverse_primary;
 }
 
 #clock,
 #battery,
 #pulseaudio,
-#network{
-	padding: 5px 15px;
-	margin:7px;
+#network,
+#memory,
+#custom-notification
+{
 	border-radius: 100px;
 	background-color: @primary;
 	color: #121212;
+	margin: 2px 5px;
+	padding: 0px 15px;
+}
+#window {
+	margin: 0px 7px;
+}
+#clock {
+	padding: 0px 7px;
+	font-weight: 500;
+}
+#network { 
+	padding: 0px 17px;
 }
 

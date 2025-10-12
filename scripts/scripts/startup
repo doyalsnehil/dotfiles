@@ -1,1 +1,7 @@
 #!/usr/bin/env bash
+ghostty
+echo 'Hello 47 , choose your environment[Home/Office/DIY]'
+read choice
+if [[ "${choice}" == 'home' ]]; then
+	
+fi
