@@ -12,6 +12,13 @@ if [[ "${BATTERY_PERC}" -eq 100 ]] && [[ "${BATTERY_STATUS}" == "Full" ]]; then
 fi
 
 if [[ "${BATTERY_STATUS}" == "Discharging" ]] && [[ "${BATTERY_PERC}" -eq 19 ]]; then
-	notify-send -u critical "lilbro you down as hell"
+	notify-send -u critical "down"
 	paplay /usr/share/sounds/freedesktop/stereo/dialog-warning.oga
+fi
+if [[ "${BATTERY_STATUS}" ]]; then
+	notify-send -u normal   	
+fi
+
+if [[ condition ]]; then
+	
 fi

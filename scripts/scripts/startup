@@ -4,4 +4,7 @@ echo 'Hello 47 , choose your environment[Home/Office/DIY]'
 read choice
 if [[ "${choice}" == 'home' ]]; then
 	
+	sudo dnf update --refresh
+	sudo dnf enable copr
+	sudo dnf 
 fi

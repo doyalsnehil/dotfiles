@@ -1,14 +1,13 @@
 [config.wallpaper]
-# Whether to set the wallpaper or not
-set =false 
-
-# The base command to run for applying the wallpaper, shouldn't have spaces in it.
+set = true
 command = "swww"
-
-# The arguments that will be provided to the command.
-# Keywords like {{ mode }} or anything that works inside of hooks doesn't work here.
-# The last argument will be the image path.
 arguments = ["img", "--transition-type", "center"]
+post_hook = '''
+for output in $(swww query | grep Output | awk "{print \$2}"); do
+  swww img {{ image_path }} --outputs $output --transition-type center
+done
+'''
+
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'

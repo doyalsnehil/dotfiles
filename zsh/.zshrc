@@ -2,13 +2,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set theme and plugins
-ZSH_THEME="customs"
+ZSH_THEME="robbyrussell"
 #ZSH_THEME="xiong-chiamiov-plus"
 plugins=(
   git
-  zsh-autosuggestions
+ # zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-completions
+	 zsh-completions
 )
 
 # Load Oh My Zsh
@@ -22,14 +22,16 @@ export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="$PATH:/home/snehil/.local/bin" # Corrected pipx patha eg. for also can be used for useronly apps like ghostty 
 export PATH="$PATH:/home/snehil/.npm-global/bin" # path for global packages of npm ( can be configured differently  )
-
+export PATH="$PATH:/home/snehil/.cargo/bin"
 # Editor configuration
 export EDITOR='nvim'
 alias vim='nvim'
 alias con='warp-cli connect'
 alias dcon='warp-cli disconnect'
 alias conup='nmcli con up redmi'
-
+alias wifi='wifi-tui'
+alias killhelper='killall -9 steamwebhelper'
+alias killsteam='killall -9 steam && killall -9 steamwebhelper'
 # NVM (Node Version Manager) configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

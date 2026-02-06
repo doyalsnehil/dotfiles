@@ -5,7 +5,8 @@
 		"hyprland/window"
 	],
 	"modules-center": [
-		"clock"
+		"clock",
+		"custom/power"
 	],
 	"modules-right": [
 		"network",
@@ -17,7 +18,7 @@
 	"battery": {
 		"interval": 10,
 		"format": "{icon} {capacity}%",
-		"format-charging": " {capacity}%",
+		"format-charging": "󰢞 {capacity}%",
 		"format-plugged": " {capacity}%",
 		"format-icons": [
 			"",
@@ -25,8 +26,7 @@
 			"",
 			"",
 			""
-		],
-		"on-update": "~/.config/waybar/scripts/battery-alert.sh"
+		]
 	},
 	"clock": {
 		"format-alt": "{:%a, %d. %b  %H:%M}",
@@ -48,8 +48,6 @@
 		"format-bluetooth": "{volume}% {icon}",
 		"format-muted": "",
 		"format-icons": {
-			"alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-			"alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
 			"headphone": "",
 			"hands-free": "",
 			"headset": "",
@@ -71,9 +69,9 @@
 	"network": {
 		"interface": "wlp2s0",
 		"format": "{ifname}",
-		"format-wifi": "{essid} ",
+		"format-wifi": "{essid} 󰤥",
 		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
-		"format-disconnected": "", //An empty format will hide the module.
+		"format-disconnected": "󰤮", //An empty format will hide the module.
 		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
 		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
 		"tooltip-format-ethernet": "{ifname} ",
@@ -105,5 +103,18 @@
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
 		"escape": true
+	},
+	"custom/power": {
+		"format": "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/scripts/power_menu.xml",
+		"menu-actions": {
+			"shutdown": "shutdown now",
+			"reboot": "reboot",
+			"logout": "hyprctl dispatch exit",
+			"lock": "pkill -x hyprlock >/dev/null 2>&1; hyprlock"
+		}
 	}
 }
+

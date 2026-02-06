@@ -36,7 +36,7 @@ tooltip label {
 #workspaces {
 	margin: 0 10px;
 	background-color: transparent;
-	transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out; 
 }
 #workspaces button {
 	background: @secondary;
@@ -78,7 +78,8 @@ tooltip label {
 #pulseaudio,
 #network,
 #memory,
-#custom-notification
+#custom-notification,
+#custom-power
 {
 	border-radius: 100px;
 	background-color: @primary;
@@ -96,4 +97,14 @@ tooltip label {
 #network { 
 	padding: 0px 17px;
 }
-
+#custom-power {
+	padding-right: 7px;
+}
+menu {
+    border-radius: 15px;
+    background: #161320;
+    color: #B5E8E0;
+}
+menuitem {
+    border-radius: 15px;
+}
